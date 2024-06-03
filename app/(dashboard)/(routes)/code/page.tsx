@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Heading from "@/components/myComps/Heading";
 import { Code } from "lucide-react";
 import PromptArea from "@/components/myComps/PromptArea";
-import { ChatCompletionRequestMessage } from "openai";
+import ChatCompletionRequestMessage  from "openai";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import * as z from "zod";
