@@ -44,9 +44,9 @@ export default function DashboardPage() {
         <h2 className="text-amber-300 text-2xl md:text-4xl font-bold text-center">
           Explore the power of AI
         </h2>
-        <p className="font-light text-amber-200 text-sm md:text-lg text-center">
+        {/* <p className="font-light text-amber-200 text-sm md:text-lg text-center">
           Chat with the smartest AI - Experience the Power of AI
-        </p>
+        </p> */}
       </div>
       <div className="not-mobile flex flex-col items-center px-4 md:px-20 lg:px-32 space-y-4">
         {tools.map((tool) => (
