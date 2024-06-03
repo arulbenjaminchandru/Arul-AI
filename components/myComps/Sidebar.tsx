@@ -15,7 +15,6 @@ import {
   MessageSquare,
   Music,
   Settings,
-  VideoIcon,
 } from "lucide-react";
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"] });

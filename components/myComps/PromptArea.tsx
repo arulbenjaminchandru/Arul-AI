@@ -11,8 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { formSchema as convSchema } from "../../app/(dashboard)/(routes)/conversation/formSchema";
 import { formSchema as imageSchema } from "../../app/(dashboard)/(routes)/image/formSchema";
-// import { formSchema as videoSchema } from "../../app/(dashboard)/(routes)/video/formSchema";
-// import { formSchema as musicSchema } from "../../app/(dashboard)/(routes)/music/formSchema";
 import { formSchema as codeSchema } from "../../app/(dashboard)/(routes)/code/formSchema";
 import { MessageSquare, Send } from "lucide-react";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -46,8 +44,6 @@ type apiEndpointsType = {
 const apiEndpoints: apiEndpointsType = {
   conversation: "/api/conversation",
   image: "/api/image",
-  // video: "/api/video",
-  // music: "/api/music",
   code: "/api/code",
 };
 

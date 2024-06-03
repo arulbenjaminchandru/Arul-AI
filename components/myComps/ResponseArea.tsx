@@ -23,8 +23,6 @@ type featureCategs = {
 const features: featureCategs = {
   conversation: "conversation",
   image: "image",
-  // video: "video",
-  // music: "music",
   code: "code",
 };
 
@@ -114,27 +112,6 @@ const ResponseArea = ({
             ))}
         </div>
       )}
-
-      {/* MUSIC
-      {type === "music" &&
-        promptResponceArr &&
-        typeof promptResponceArr === "string" && (
-          <audio controls className="w-full mt-8">
-            <source src={promptResponceArr} />
-          </audio>
-        )} 
-        
-        VIDEO
-      {type === "video" &&
-        promptResponceArr &&
-        typeof promptResponceArr === "string" && (
-          <video
-            controls
-            className="w-full aspect-video mt-8 rounded-lg  border bg-black"
-          >
-            <source src={promptResponceArr} />
-          </video>
-        )} */}
     </div>
   );
 };
