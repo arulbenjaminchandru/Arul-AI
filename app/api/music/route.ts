@@ -32,7 +32,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json(response);
   } catch (error) {
-    console.error("❌ (route.ts) [API_MUSIC_ERROR]: ", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

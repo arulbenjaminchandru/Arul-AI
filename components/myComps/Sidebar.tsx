@@ -13,7 +13,6 @@ import {
   ImageIcon,
   LayoutDashboard,
   MessageSquare,
-  Music,
   Settings,
 } from "lucide-react";
 

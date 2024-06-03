@@ -27,7 +27,7 @@ const features: featureCategs = {
 };
 
 const ResponseArea = ({
-  promptResponceArr, //messages in Video Tutorial
+  promptResponceArr, 
   isLoading,
   type,
 }: ResponseAreaProps) => {
