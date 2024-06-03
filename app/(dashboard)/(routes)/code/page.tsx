@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Heading from "@/components/myComps/Heading";
 import { Code } from "lucide-react";
 import PromptArea from "@/components/myComps/PromptArea";
-import ChatCompletionRequestMessage  from "openai";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import * as z from "zod";
@@ -13,11 +12,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
+// Define the ChatCompletionRequestMessage type locally
+interface ChatCompletionRequestMessage {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+}
 
 const CodePage = () => {
-  const [messages, setMessages] = useState(
-    [] as ChatCompletionRequestMessage[]
-  );
+  const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -31,7 +33,7 @@ const CodePage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log(
-      "🧪 The form' values that are going to be submitted to ChatGPT"
+      "🧪 The form's values that are going to be submitted to ChatGPT"
     );
     console.log(values);
     try {
@@ -41,20 +43,22 @@ const CodePage = () => {
       };
       const newMessages = [...messages, userMessage];
 
-      const responce = await axios.post("/api/code", {
+      const response = await axios.post("/api/code", {
         messages: newMessages,
       });
-      setMessages((current) => [...current, userMessage, responce.data]);
+      setMessages((current) => [...current, userMessage, response.data]);
 
       form.reset();
     } catch (error: any) {
       console.log("⛔ [API_CONVERSATION_ERROR]: ", error);
       toast.error("Something went wrong");
-
     } finally {
       router.refresh();
     }
   };
+
+  // Transform messages to an array of strings
+  const transformedMessages = messages.map(message => message.content);
 
   return (
     <main className="not-mobile h-full">
@@ -71,7 +75,7 @@ const CodePage = () => {
         handleSubmit={onSubmit}
         isLoading={isLoading}
         form={form}
-        AIresponses={messages}
+        AIresponses={transformedMessages} // Pass transformed messages
       />
     </main>
   );
