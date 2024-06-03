@@ -13,11 +13,6 @@
     "shadcn",
     "prisma"
   ],
-  "author": {
-    "name": "S. Stavros",
-    "email": "b@rubble.com",
-    "url": "https://www.uth.gr/en"
-  },
   "private": true,
   "scripts": {
     "dev": "next dev",
