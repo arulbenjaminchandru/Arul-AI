@@ -46,8 +46,8 @@ type apiEndpointsType = {
 const apiEndpoints: apiEndpointsType = {
   conversation: "/api/conversation",
   image: "/api/image",
-  video: "/api/video",
-  music: "/api/music",
+  // video: "/api/video",
+  // music: "/api/music",
   code: "/api/code",
 };
 
