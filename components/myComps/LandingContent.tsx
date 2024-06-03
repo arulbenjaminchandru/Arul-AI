@@ -61,30 +61,6 @@ const LandingContent = () => {
       <h2 className="text-center text-4xl text-white font-extrabold mb-10">
         An Open AI wrapper for code, chat and image Generation
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {technologies.map((tech) => (
-          <Card
-            key={tech.title}
-            className="bg-[#192339] border-none text-white"
-          >
-            <CardHeader className="">
-              <CardTitle className="flex items-center justify-between gap-x-2">
-                <div className="relative h-12 w-12 sm:h-24 sm:w-24">
-                  <Image alt={tech.title} fill src={tech.image} />
-                </div>
-                <div className="flex flex-col gap-y-6 justify-around">
-                  <div className="text-white text-[20px] text-right">
-                    {tech.version}
-                  </div>
-                  <div className="text-white text-[20px] text-right">
-                    {tech.purpose}
-                  </div>
-                </div>
-              </CardTitle>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
     </div>
   );
 };
