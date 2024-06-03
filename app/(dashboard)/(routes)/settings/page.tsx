@@ -27,32 +27,6 @@ const SettingsPage = () => {
     },
   });
 
-  const isLoading = form.formState.isSubmitting;
-
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(
-      "🧪 The form' values that are going to be submitted to ChatGPT"
-    );
-    console.log(values);
-    try {
-      const userMessage: ChatCompletionRequestMessage = {
-        role: "user",
-        content: values.prompt,
-      };
-      const newMessages = [...messages, userMessage];
-
-      const responce = await axios.post("/api/code", {
-        messages: newMessages,
-      });
-      setMessages((current) => [...current, userMessage, responce.data]);
-
-      form.reset();
-    } catch (error: any) {
-      console.log("⛔ [API_SETTINGS_ERROR]: ", error);
-    } finally {
-      router.refresh();
-    }
-  };
 
   return (
     <main className="not-mobile h-full">

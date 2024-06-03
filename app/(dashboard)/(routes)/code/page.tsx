@@ -46,7 +46,11 @@ const CodePage = () => {
       const response = await axios.post("/api/code", {
         messages: newMessages,
       });
-      setMessages((current) => [...current, userMessage, response.data]);
+
+      // Assuming response.data contains the assistant's message
+      const assistantMessage: ChatCompletionRequestMessage = response.data;
+
+      setMessages((current) => [...current, userMessage, assistantMessage]);
 
       form.reset();
     } catch (error: any) {
@@ -57,7 +61,7 @@ const CodePage = () => {
     }
   };
 
-  // Transform messages to an array of strings
+  // Transform messages to an array of strings if needed
   const transformedMessages = messages.map(message => message.content);
 
   return (
