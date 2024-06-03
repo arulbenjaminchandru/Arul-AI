@@ -40,18 +40,6 @@ const routes = [
     color: "text-pink-700",
   },
   {
-    label: "Video Generation",
-    icon: VideoIcon,
-    href: "/video",
-    color: "text-orange-700",
-  },
-  {
-    label: "Music Generation",
-    icon: Music,
-    href: "/music",
-    color: "text-emerald-500",
-  },
-  {
     label: "Code Generation",
     icon: Code,
     href: "/code",
@@ -87,9 +75,9 @@ const Sidebar = () => {
                 <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
 
                 {/* Page Indicator "👉" */}
-                {pathname === route.href && (
+                {/* {pathname === route.href && (
                   <span className="-translate-y-0.5">{"👉"}</span>
-                )}
+                )} */}
 
                 <span className={cn("", pathname === route.href ? "pl-2" : "")}>
                   {route.label}

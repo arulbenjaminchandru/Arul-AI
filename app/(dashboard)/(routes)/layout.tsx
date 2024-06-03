@@ -6,13 +6,13 @@ import UserInfo from "@/components/myComps/UserInfo";
 
 const DashboardLayout = ({ children }: reactChildrenForProps) => {
   return (
-    <div className="h-full relative bg-rose-900">
+    <div className="h-full relative bg-gray-800">
       <div className="hidden h-full lg:flex lg:flex-col lg:fixed lg:inset-y-0 z-[80] bg-gray-800 ">
         {/* {children} */}
         <UserInfo />
         <Sidebar />
       </div>
-      <main className="bg-gray-500">
+      <main className="bg-gray-800">
         <Navbar />
         {children}
       </main>
